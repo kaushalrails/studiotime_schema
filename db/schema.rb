@@ -54,10 +54,12 @@ ActiveRecord::Schema.define(version: 2019_10_10_115327) do
     t.integer "rating"
     t.string "reviewer_type"
     t.integer "reviewer_id"
+    t.integer "user_id"
     t.boolean "verified"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["reviewer_type", "reviewer_id"], name: "index_reviews_on_reviewer_type_and_reviewer_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "slots", force: :cascade do |t|

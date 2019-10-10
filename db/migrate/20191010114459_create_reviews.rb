@@ -4,6 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.text :description
       t.integer :rating
       t.references :reviewer, polymorphic: true
+      t.references :user
       t.boolean :verified
       t.timestamps
     end
